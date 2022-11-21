@@ -57,7 +57,7 @@ const Home: React.FC = () => {
         borderTop="1px solid black"
       >
         <Text>
-          Dev by Juan Cruz Valencia with <Icon as={FaHeart} color="tomato"/>
+          Dev by Juan Cruz Valencia with <Icon as={FaHeart} color="tomato" />
         </Text>
       </Box>
     </Box>
