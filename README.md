@@ -5,7 +5,7 @@ Shopping list for the supermarket, you can add items that will be stored in the 
 
 ## DEMO
 
-![](https://firebasestorage.googleapis.com/v0/b/my-portfolio-jcvv.appspot.com/o/supermarketList.gif?alt=media&token=360d4704-0eb9-41a6-b8ef-872cf9074508)
+![](https://github.com/JuanCruzValencia/supermarketList/blob/main/supermarketList.gif)
 
 ### Technologies used
 
