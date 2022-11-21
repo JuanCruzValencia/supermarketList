@@ -10,7 +10,7 @@ const InputForm: React.FC = () => {
     category: "",
     item: "",
   } as Item);
-  
+
   const { storage, handleStorage } = useContext(ToDoContext);
 
   const getItemId = () => {

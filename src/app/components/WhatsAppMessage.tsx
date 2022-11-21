@@ -17,10 +17,9 @@ const MessageBox: React.FC = () => {
     const { target } = event;
     setMessage({
       number: target.value,
-      message: JSON.stringify(storage.forEach((item) => item.item)),
+      message: `Hay que comprar: ${storage.map((item) => item.item)}`,
     });
   };
-
   return (
     <Box display="flex" gap="2rem" flexDirection="column">
       <Heading color="blackAlpha.700">Send your list to WhatsApp</Heading>

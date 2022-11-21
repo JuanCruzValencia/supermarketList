@@ -16,7 +16,6 @@ export const ToDoContext = createContext({} as Context);
 const ToDoContextProvider: React.FC<Props> = ({ children }) => {
   const [storage, handleStorage] = useLocalStorage("supermarket", [] as Item[]);
 
-  console.log(typeof storage);
   return (
     <ToDoContext.Provider value={{ storage, handleStorage }}>
       {children}

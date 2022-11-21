@@ -3,7 +3,6 @@ import { Item } from "../types/list";
 
 const useLocalStorage = (key: string, value: Item[]) => {
   const [storage, setStorage] = useState(() => {
-
     try {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : value;
@@ -11,8 +10,6 @@ const useLocalStorage = (key: string, value: Item[]) => {
       return value;
     }
   });
-
-  console.log(storage);
 
   const handleStorage = (newValue: Item[]) => {
     try {

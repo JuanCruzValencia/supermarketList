@@ -14,8 +14,6 @@ const Card: React.FC = () => {
     handleStorage([...storageUpdated]);
   };
 
-  console.log(typeof storage);
-
   return (
     <Box
       p="1rem"
