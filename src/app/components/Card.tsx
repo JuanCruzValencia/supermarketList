@@ -4,24 +4,26 @@ import { ToDoContext } from "../context/toDoContext";
 import { Item } from "../types/list";
 
 const Card: React.FC = () => {
-  const { state, handleStorage } = useContext(ToDoContext);
+  const { storage, handleStorage } = useContext(ToDoContext);
 
   const handleClick = (itemId: string) => {
-    const storageCopy: Item[] = [...state];
+    const storageCopy: Item[] = [...storage];
     const storageUpdated: Item[] = storageCopy.filter(
       (item: Item) => item.id !== itemId
     );
     handleStorage([...storageUpdated]);
   };
 
+  console.log(typeof storage);
+
   return (
     <Box
       p="1rem"
-      border={state.length > 0 ? "1px solid grey" : undefined}
+      border={storage.length > 0 ? "1px solid grey" : undefined}
       borderRadius="10px"
       w="100%"
     >
-      {state.map((listItem: Item) => {
+      {storage.map((listItem: Item) => {
         return (
           <Stack
             key={listItem.id}

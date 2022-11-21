@@ -11,18 +11,14 @@ type Message = {
 
 const MessageBox: React.FC = () => {
   const [message, setMessage] = useState({} as Message);
-  const { state } = useContext(ToDoContext);
+  const { storage } = useContext(ToDoContext);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { target } = event;
     setMessage({
       number: target.value,
-      message: JSON.stringify(state.map((item) => item.item)),
+      message: JSON.stringify(storage.forEach((item) => item.item)),
     });
-  };
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const whatsApp = `https://wa.me/send?phone=${message.number}/?text=${message.message}`;
   };
 
   return (

@@ -10,18 +10,19 @@ const InputForm: React.FC = () => {
     category: "",
     item: "",
   } as Item);
-  const { state, handleStorage } = useContext(ToDoContext);
+  
+  const { storage, handleStorage } = useContext(ToDoContext);
 
   const getItemId = () => {
-    const index = state.length;
+    const index = storage.length;
     const id = index > 0 ? index + 1 : 1;
     return id.toString();
   };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    state.push({ ...form, id: getItemId() });
-    handleStorage([...state]);
+    storage.push({ ...form, id: getItemId() });
+    handleStorage([...storage]);
   };
 
   return (

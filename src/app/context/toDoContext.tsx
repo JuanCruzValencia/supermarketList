@@ -3,7 +3,7 @@ import { createContext } from "react";
 import { Item } from "../types/list";
 
 interface Context {
-  state: Item[];
+  storage: Item[];
   handleStorage: (value: Item[]) => void;
 }
 
@@ -14,12 +14,11 @@ type Props = {
 export const ToDoContext = createContext({} as Context);
 
 const ToDoContextProvider: React.FC<Props> = ({ children }) => {
-  const [storage, handleStorage] = useLocalStorage("supermarket", {} as Item[]);
+  const [storage, handleStorage] = useLocalStorage("supermarket", [] as Item[]);
 
-  const state = storage;
-  const actions = handleStorage;
+  console.log(typeof storage);
   return (
-    <ToDoContext.Provider value={{ state, handleStorage }}>
+    <ToDoContext.Provider value={{ storage, handleStorage }}>
       {children}
     </ToDoContext.Provider>
   );
